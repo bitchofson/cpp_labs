@@ -26,11 +26,11 @@ int main() {
     }
     std::cout << std::endl;
     
+    delete bool_vector;
 
     for (size_t i = 0; i < r; i++) {
-		
+		delete matrix[i];
 	}
-	
 
     return 0;
 }
