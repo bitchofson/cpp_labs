@@ -12,7 +12,7 @@ public:
 
     Folder *get_root() {
         return &root;
-    }
+    }#pragma once
 };
 
 int main() {
@@ -39,7 +39,18 @@ int main() {
     file.move(root, &home);
     std::cout << "--------------------------------------" << std::endl;
     home.print_inner();
+    
     std::cout << "--------------------------------------" << std::endl;
+    File file_second("data_2", root, "docx", 2048);
+    SymbolicLink link("symbollink", &home, &file);
+    link.toString();
+    std::cout << "--------------------------------------" << std::endl;
+    link.set_target(&file_second);
+    std::cout << "--------------------------------------" << std::endl;
+    link.toString();
+    std::cout << "--------------------------------------" << std::endl;
+    root->remove_element("dev");
+    root->print_inner();
 
 
     return 0;

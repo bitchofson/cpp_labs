@@ -42,8 +42,6 @@ void Folder::remove_element(std::string element_name) {
     for (int i = 0; i < objects.size(); ++i) {
         if (objects[i]->get_name() == element_name) {
             objects.erase(objects.begin() + i);
-            //objects[i]->set_parent(nullptr);
-            //delete objects[i];
             break;
         }
     }
